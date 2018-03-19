@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
   error: null,
   isConnected: false,
-  userInfo: null
+  userInfo: {}
 };
 
 const appReducer = (currentState = INITIAL_STATE, action) =>{
@@ -17,15 +17,16 @@ const appReducer = (currentState = INITIAL_STATE, action) =>{
       return {
         ...currentState,
         error: null,
-        isConnected: true,
-        userInfo: action.connexionInfo
+        isConnected: !currentState.isConnected,
+        // isConnected: true,
+        userInfo: action.connexionInfo || {nom: 'ROGER', prenom: 'Jean-Baptiste'}
       }
     case 'HOME_CONNEXION_FAILED':
       return {
         ...currentState,
         error: null,
         isConnected: false,
-        userInfo: null
+        userInfo: {}
       }
     default:
       return currentState;

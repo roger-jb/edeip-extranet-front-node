@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
 import './Home.css'
+import { Redirect } from 'react-router'
 
 export default class Home extends React.Component {
   constructor (props){
@@ -16,6 +17,9 @@ export default class Home extends React.Component {
 
   render (){
     const homeState = this.props.mappedHomeState;
+    if (!homeState.isConnected){
+      <Redirect to='/'/>
+    }
     return (
       <div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous"/>
@@ -23,7 +27,7 @@ export default class Home extends React.Component {
         <Navbar inverse collapseOnSelect className="customNav">
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">EDEIP Extranet</a>
+              <a href="/#">EDEIP Extranet</a>
             </Navbar.Brand>
             <Navbar.Toggle/>
           </Navbar.Header>
@@ -41,9 +45,10 @@ export default class Home extends React.Component {
         {this.props.location.state}
         <Button onClick={this.connexion}>Toggle</Button>
         {!homeState.isConnected &&
-        <div>Ceci est le corp. Voila.</div> }
+          <div>Ceci est le corp2. Voila.</div>
+         }
         {homeState.isConnected &&
-        <div>Bonjour {homeState.userInfo.nom} {homeState.userInfo.prenom}</div>}
+          <div>Bonjour2 {homeState.userInfo.nom} {homeState.userInfo.prenom}</div>}
       </div>
     )
   }

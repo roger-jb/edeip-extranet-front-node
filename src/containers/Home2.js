@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Home from '../components/Home'
+import Home2 from '../components/Home2'
 import * as homeActions from '../actions/homeActions'
 const mapStateToProps = (state) => {
   return {
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home2)
