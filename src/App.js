@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { Router, browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
 
 import configureStore from './store/configureStore'
-import routes from './routes'
+import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import Home from './containers/Home'
 
 const store = configureStore()
-const history = syncHistoryWithStore(browserHistory, store)
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div>
-          <Router history={history} routes={routes}/>
+          <Router>
+            <Route exact path="/" component={Home} />
+          </Router>
         </div>
       </Provider>
     )

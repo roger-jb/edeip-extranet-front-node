@@ -1,18 +1,18 @@
 import React from 'react'
 import {Navbar, Nav, NavItem} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
-import './App.css'
+import './Home.css'
 
-export default class App extends React.Component {
+export default class Home extends React.Component {
   constructor (props){
     super(props)
   }
   render (){
-    const appState = this.props.mappedAppState
+    const homeState = this.props.mappedHomeState;
     return (
       <div>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossOrigin="anonymous"/>
         <Navbar inverse collapseOnSelect className="customNav">
           <Navbar.Header>
             <Navbar.Brand>
@@ -28,7 +28,7 @@ export default class App extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <div>Ceci est le corp</div>
+        <div>Ceci est le corp. Voila.</div>
       </div>
     )
   }
